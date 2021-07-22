@@ -13,6 +13,12 @@ import powermock.helloworld.dao.UserDao;
 import powermock.helloworld.service.UserService;
 
 /**
+ *   a、Mock对象
+ *   b、打桩
+ *   c、调桩
+ *
+ *
+ *
  * @Author qinwen
  * @Date 2021/7/22 2:25 下午
  */
@@ -40,24 +46,31 @@ public class UserServiceTest {
 
     @Test
     public void testQueryUserCount() {
+        // 打桩 设置mock对象的行为 - when()...then()
         Mockito.when(userDao.getCount()).thenReturn(10).thenReturn(1);
+        // 调桩 + 验证
         Assert.assertEquals(10, userService.queryUserCount());
         Assert.assertEquals(10, userService.queryUserCount());
     }
 
     @Test
     public void testQueryUserCount2() {
+        // 打桩 设置mock对象的行为 - do()...when()...
         Mockito.doReturn(12).when(userDao).getCount();
+        // 调桩 + 验证
         Assert.assertEquals(12, userService.queryUserCount());
 
     }
 
     @Test
     public void testSave() {
+        // 打桩 设置mock对象的行为 - do()...when()...
         Mockito.doNothing().when(userDao).insertUser(user);
 
+        // 调桩
         userService.saveUser(user);
 
+        // 验证
         // Mockito.verify(userDao).insertUser(user);
         // Mockito.verify(userDao, Mockito.times(2)).insertUser(user);
         Mockito.verify(userDao, Mockito.timeout(10).times(2)).insertUser(user);

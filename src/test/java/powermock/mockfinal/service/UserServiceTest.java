@@ -24,7 +24,6 @@ public class UserServiceTest {
     @Mock
     private UserDao userDao;
 
-    @Ignore
     @Test
     public void queryUserCountWithMockito() {
         MockitoAnnotations.initMocks(this);

@@ -7,7 +7,7 @@ import powermock.common.User;
  * @Date 2021/7/21 10:18 上午
  */
 final public class UserDao {
-    public int getCount() {
+    public final int getCount() {
         throw new UnsupportedOperationException();
     }
 
