@@ -13,11 +13,12 @@ import powermock.helloworld.dao.UserDao;
 import powermock.helloworld.service.UserService;
 
 /**
+ *
+ *   Mockito 入门
+ *
  *   a、Mock对象
  *   b、打桩
  *   c、调桩
- *
- *
  *
  * @Author qinwen
  * @Date 2021/7/22 2:25 下午

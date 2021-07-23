@@ -12,6 +12,8 @@ import org.powermock.modules.junit4.PowerMockRunner;
 import powermock.matcher.dao.UserDao;
 
 /**
+ * Matcher & Answer
+ *
  * @Author qinwen
  * @Date 2021/7/21 4:14 下午
  */
@@ -64,7 +66,24 @@ public class UserServiceTest {
         Assert.assertEquals("hexiao", service.find("chuanhua"));
         // Assert.assertEquals("hexiao", service.find("hexiao"));
 
+    }
 
+    static class MyArgumentMatcher extends ArgumentMatcher<String> {
+
+        @Override
+        public boolean matches(Object o) {
+            String arg = (String) o;
+            switch (arg) {
+                case "miluo":
+                case "qinwen":
+                case "ahuang":
+                case "cangfeng":
+                case "chuanhua":
+                    return true;
+                default:
+                    return false;
+            }
+        }
     }
 
     @Test
@@ -98,21 +117,5 @@ public class UserServiceTest {
 
     }
 
-    static class MyArgumentMatcher extends ArgumentMatcher<String> {
 
-        @Override
-        public boolean matches(Object o) {
-            String arg = (String) o;
-            switch (arg) {
-                case "miluo":
-                case "qinwen":
-                case "ahuang":
-                case "cangfeng":
-                case "chuanhua":
-                    return true;
-                default:
-                    return false;
-            }
-        }
-    }
 }

@@ -1,6 +1,8 @@
 package mockito.simple;
 
+import org.junit.Assert;
 import org.junit.Test;
+import org.mockito.Mockito;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -8,6 +10,8 @@ import java.util.List;
 import static org.mockito.Mockito.*;
 
 /**
+ * Mockito
+ *
  * @Author qinwen
  * @Date 2021/7/22 5:52 下午
  */
@@ -42,6 +46,10 @@ public class SimpleTest {
         System.out.println(mockedList.get(0));
         // the following prints "null" because get(999) was not stubbed
         System.out.println(mockedList.get(999));
+
+        Mockito.verify(mockedList).get(0);
+        Assert.assertEquals("first", mockedList.get(0));
+        Mockito.verify(mockedList).get(9);
     }
 
     /**

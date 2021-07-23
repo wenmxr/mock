@@ -11,6 +11,8 @@ import powermock.mockstatic.dao.UserDao;
 import static org.junit.Assert.assertEquals;
 
 /**
+ * PowerMock - static
+ *
  * @Author qinwen
  * @Date 2021/7/21 2:42 下午
  */

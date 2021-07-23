@@ -14,6 +14,8 @@ import powermock.mockfinal.dao.UserDao;
 import static org.junit.Assert.*;
 
 /**
+ * PowerMock - final
+ *
  * @Author qinwen
  * @Date 2021/7/21 3:21 下午
  */
